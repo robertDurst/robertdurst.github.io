@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/r_durst
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://robdurst.com
+  * I am r_durst (https://keybase.io/r_durst) on keybase.
+  * I have a public key ASB3LNmsrWPL2kNig-JnC3Qs0fwbgpvKFpcanjUnFQbxPAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012010a652621010936deb5c351fa3a3ac871f71476411fc125aa1782e0de201a8d30a",
+      "host": "keybase.io",
+      "kid": "0120772cd9acad63cbda436283e2670b742cd1fc1b829bca16971a9e35271506f13c0a",
+      "uid": "913396e30b75ce2641161c5b9ce71b19",
+      "username": "r_durst"
+    },
+    "merkle_root": {
+      "ctime": 1542412898,
+      "hash": "67f9e76bf9b5f429d5f36cc9b6f3791c38f9aa49544ffc3a5c5226857b4c7a9ceb2d12a1daeeed63d5a33fdd7412bbf1a674a5ace6e460552bfaffea359ad2c7",
+      "hash_meta": "54b2630b7743ed0c51e96efe4ac8dfa27779427e3645633bf56b9130b48078ba",
+      "seqno": 3967057
+    },
+    "service": {
+      "entropy": "cERf/Ff63qCeqrGYZSvB2AYa",
+      "hostname": "robdurst.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.11.0"
+  },
+  "ctime": 1542412923,
+  "expire_in": 504576000,
+  "prev": "667caadb1e9e693dbd565d7c6172d0ab878c2376bacbebec3e7de912adda59fa",
+  "seqno": 46,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgdyzZrK1jy9pDYoPiZwt0LNH8G4KbyhaXGp41JxUG8TwKp3BheWxvYWTESpcCLsQgZnyq2x6eaT29Vl18YXLQq4eMI3a6y+vsPn3pEq3aWfrEIKO+/CvwibqdhfEhUtpXk2PA1LfR4cFkrvwFgqp4yWsqAgHCo3NpZ8RAl2v/qrRb/sktDWzpTuJVrE5e2vC+rO8yQSSoaSHkhJnc/yAz400C4vCAieLq8v/iuGcg3ipd2KSbyabfMuVmA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEILtBnflsz0aPOi50Boyg9oTp034EgcSQUogRyrtnanPVo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/r_durst
+
+==================================================================
