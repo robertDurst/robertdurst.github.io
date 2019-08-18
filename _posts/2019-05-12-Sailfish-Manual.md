@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Spring 2019 Independent Study: The Sailgish Programming Language"
+title:  "Spring 2019 Independent Study: The Sailfish Programming Language"
 date:   2019-05-12 19:19:21 +0700
 ---
 
