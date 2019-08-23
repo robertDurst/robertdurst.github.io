@@ -15,7 +15,9 @@ If I am not coding, I am probably at the *gym*, *surfing* the break, or planning
 
 ## Profiles
 
-**Email:** me [at] robdurst.com <br>
-**Keybase:** *r_durst* <br>
-**Github:** *robertDurst* <br>
-**Linkedin:** */in/robertdurst*
+You can find me online at:
+
+* **Email:** me [at] robdurst.com <br>
+* **Keybase:** *r_durst* <br>
+* **Github:** *robertDurst* <br>
+* **Linkedin:** */in/robertdurst*
