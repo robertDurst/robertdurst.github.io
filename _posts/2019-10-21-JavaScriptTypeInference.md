@@ -49,7 +49,9 @@ This makes sense given the algorithm's basic design:
 So, as a curious and naive undergrad, I set out to see if I could do better.
 
 ![Let's do this](https://media.giphy.com/media/CjmvTCZf2U3p09Cn0h/giphy.gif)
+
 ***
+
 ## Putting the Brute in Brute Force
 
 With a couple months of algorithm practice as part of interview preperation, I knew the first move was to check out a brute force solution. This is rather obvious and was quick to implement. Basically, for the first five argument positions (a hard coded assumption made by the paper) I generated all possible combinations of types with a callback at the end. Satisfyingly, this exhaustive approach was correct, finding every single callback position. However, as with any of these brute force algorithms, it did not scale well. For this particular input size, my code tried over 1500 combinations, a fairly non-trivial 15x more than LambdaTester's algorithm. Some quick math:
@@ -66,7 +68,9 @@ Total: 1555
 ```
 
 Thus, we more generally have a (6^(n-1)) + (6^(n-2))... or roughly an exponential 6^n complexity, which is **really bad**, especially given the initial algorithm is constant time, or 100 iterations no matter the size of n arguments we want to discover. 
+
 ***
+
 ## How can we optimize this?
 
 Using my problem solving strategies from [The Algoithm Design Manual](http://algorist.com/), I searched for ways to reduce repeated work or prune the search space. Ultimately turns out there is no good way to do so since:
@@ -93,7 +97,9 @@ and furthermore, was less interesting because it seemed to be veering on the sid
 ![later](https://media.giphy.com/media/l4FGJPnSGn9K5wcTK/giphy.gif)
 
 **AND WE ARE BACK AT THE BEGINNING OF THIS POST...**
+
 ***
+
 ## Conclusion - Gradual Typing and this Thing Called Heuristics
 
 This evening, before diving back into my partial solution from above, I decided to do a bit of searching into this concept I had seen around the internet called **Gradual Typing**. Settling upon [an article by Jeremy Siek](https://wphomes.soic.indiana.edu/jsiek/what-is-gradual-typing/), I learned that gradual typing is a type system where static and dynamic types coexist, often via type annotations...
