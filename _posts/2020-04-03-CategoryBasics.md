@@ -60,6 +60,8 @@ Sometimes it's pretty cool to have more than one of something (unless that thing
 * **A set of arrows:** `A` = { `f`, `g`, `h` }
 * **The empty set:** ∅ = {}
 
+**Note:** sets can come with some very helpful properties a la [Set Theory](https://plato.stanford.edu/entries/set-theory/). While these are important and may be useful later, let's ignore them for now. Instead, a set is simply a collection of things.
+
 ***
 
 ### Graph
@@ -81,6 +83,85 @@ While addition of these trivial operations may seem pointless, we are now able t
 
 ***
 
+### Axioms vs. Observations
+
+In the next expansion of our world, *Category*, we will begin to introduce some axioms about the system. Having not left my house for over 30 hours, I have entered a sort of (phsychadelic free) philosophical existence. If you're not an experienced Mathematician, and even if you are, you may wonder the following:
+* What is an observation?
+* What is an axiom?
+* What is the difference between an axiom and an observation?
+* Why do we need axioms?
+
+While I will answer all these, in the process of doing so, you will understand better how mathematics, as a universe is built (and simultaneously understand my process for constructing Categories).
+
+**Scene:** one day, I take you to an apple orchard and you notice that the first tree has `10` apples on it, the second tree has `37` apples on it and the third free has `104` apples on it.
+
+| Tree | Apples |
+|------|--------|
+|  1   |  10    |
+|  2   |  37    |
+|  3   | 104    |
+
+This is an observation.
+
+**Observation:** *"a record or description so obtained "* - [Merriam-Webster Dictionary](https://www.merriam-webster.com/dictionary/observation)
+
+Since you took some basic math classes, you deduce a pattern:<br>
+`prevApples + 7 + (20 * 3^(tree#-2))`:
+
+| tree# | prevApples | formula              | apples |
+|-------|--------------------|----------------------|--------|
+|  1    |  n/a               | n/a                  | 10     |
+|  2    |  10                | 10 + 7 + (20 * (3^0))| 37     |
+|  3    |  37                | 37 + 7 + (20 * (3^1) | 104    |
+
+**Note:** technically this is not mathematically sound, how can you explain the first tree? Ignore this for now... this is more or less the point of this example.
+
+We call this a hypothesis, or conjecture.
+
+**Hypothesis:** *"an educated guess"* - every grade school science teacher ever
+
+However, you continue walking through the orchard and see more trees. It turns out your hypothesis did not hold:
+
+| Tree | Apples | Predicted |
+|------|--------|-----------|
+|  1   |  10    | 10        |
+|  2   |  37    | 37        |
+|  3   | 104    | 104       |
+|  4   | 229    | 291       |
+|  5   | 430    | 838       |
+
+In fact, you were not even remotely close. It turns out, after some laborious calculations, the pattern is actually: <br>
+`apples = 3 * (tree#)^3 + 2 * (tree#)^2 + 5`
+
+With some fancy logic skills, we can utilize a technique called induction to prove this formula works. Once we have proven a hypothesis, it is called a **theorem**. As stated in an article that really motivated this section: <br>
+
+*"Proofs are what make mathematics different from all other sciences, because once we have proven something we are absolutely certain that it is and will always be true. It is not just a theory that fits our observations and may be replaced by a better theory in the future."* [mathgion.org](https://mathigon.org/world/Axioms_and_Proof) <br>
+
+From this, we observe that math tends to follow a pattern like this:<br>
+
+1. observe something
+2. question whether that observation holds in other situations
+3. postulate that it does and construct a hypothesis
+4. gather some more data, a.k.a examples, and see if hypothesis holds
+5. formulate a proof (via induction, contradiction, etc.)
+6. verify logic holds: via math friends or a proof assistant like [Lean](https://leanprover.github.io/), [Coq](https://coq.inria.fr/), etc.
+7. tell the world and publish results
+
+From this process, we continuously define the world around us, developing a more concrete system for building, creating, and understanding.
+
+Cool right? Well, I still have not gotten around to axioms yet. Let's go back to the proof of induction from above. In this proof, I had to rely on some basic building blocks, or principles to base my argument on. i.e. if I was to prove to you `1 + 1 = 2`, we would need to agree on a few things:
+* the definition of equals
+* how one *adds* things
+* what even is a number
+
+While this may seem like a recursive process that never ends, at some point you hit rock bottom... *"ok Rob, just believe me, this is true!!!"*. This is where we discuss axioms.
+
+**Axiom:** *"a statement that is taken to be true, to serve as a premise or starting point for further reasoning and arguments"* - [Wikipedia](https://en.wikipedia.org/wiki/Axiom)
+
+In each branch of math, logic, philosophy, etc. there are fundamental truths or observations that are more or less *"self explanatory."* Since we are building up a mathematical system here, *Category Theory*, we need to introduce some of our own fundamental building blocks. In doing so, we can then construct an entire system, or world, where our observations (or here our `operations`) have more meaning because we can prove things about them, things that **ALWAYS** hold!
+
+***
+
 ### Category
 
 Ah yes, things are getting real! Let's talk about categories. To begin, we are building off of a graph - thus we have a set `O` of objects, a set `A` of arrows between objects and the `domain` and `codomain` operations. We begin by adding a couple more `operations`:
@@ -89,9 +170,12 @@ Ah yes, things are getting real! Let's talk about categories. To begin, we are b
 * **composition:** for a pair of arrows `f` and `g`, denoted <`f`, `g`>, where `cod(f)` = `dom(g)`, we have an arrow `g ; f` called the *composite*, where we read `g ; f` as first apply `f` then apply `g`.<br>
 <div style="text-align:center"><img src="https://imgur.com/8HHNq6P.png" /></div>
 
-**STOP:** before moving forward, let's ponder on the meaning of an operation. What is an operation? If you're a math person, think about functions. What is a function? Let's get a little philosophical and step back for a moment. An operation takes something as input and returns something else as output. `cod` takes an arrow and returns the `object` to its right. `composition` takes a pair of arrows and returns their `composite`. From one thing, we get, or observe another. At its heart, an operation is an **observation** or a way of deriving information from some source. They can be used together, like legos, allowing you to form more complex observations from smaller ones. Yet, observations themselves are not necessarily useful - just because something happened does not give us the basis for any sort of reasoning, **we cannot make any assumptions**.<br>
 <br>
-To make assumptions, we need rules, established truths, **axioms**. In the world of categories, we establish our first axioms! We'll start with `unit law` <br>
+It is now time to define some axioms. If you decided to skim this piece... shame on you. Please go back and read *Axioms vs. Oservations*. *TL&DR* axioms are the fundamental building blocks of a system or world:
+
+<div style="text-align:center"><img src="https://imgur.com/DqhbD9d.png" /></div>
+
+As promised, in the world of categories, we establish our first axioms! We'll start with the `unit law`. <br>
 <br>
 **Unit law:** for every arrow  `f`: 😀 ➡️ 🍕 and every  `g`: 🍕 ➡️ 🐈, composition with `ID🍕` gives: <br>
 `ID🍕 ;  f` = `f` and `g ; ID🍕` = `g`<br>
@@ -103,8 +187,23 @@ From this we get the following commutative diagram:
 From this we get the following commutative diagram:
 <div style="text-align:center"><img src="https://imgur.com/ZGVvdHo.png" /></div>
 
-These axioms, or assumptions, are **very important**. They explain **truths** about observations - i.e. you observe that some object `a` has `IDa`. Therefore, this `IDa`, when composed with `f` and `g` such that `cod(f) = a` and `dom(g) = a`, we know that these compositions, properly ordered, will result in `f` and `g` respectively. As another example, let's say you observe `cod(f) = dom(g)` and then further observe that `< f, g >` may be composed to form the composite `g ; f`. Given some other arrow `h` where `dom(h) = cod(g)`, we then know that we can place the parenthesis anywhere due to associativity.<br>
-<br>
+#### Axioms in Action
+
+Imagine a world **without** the above, a world only with the four previously defined operations. Let's say you notice that, for a few different `ID` arrows, `ID; ID; ID ; dom(ID) = dom(ID)` and `cod(ID) ; ID ; ID ; ID = cod(ID)`. You tell your friends *"hey everyone, I believe for every `ID`, the this observation holds."* When your friends ask, *"how do you know?"* you begin to produce example after example. One friend is not convinced, he is pessimisstic and believes there must exist some `ID` where this does not hold. Without any basis of axioms, without any common set of assumptions, there is no way to convince your pessmisstic friend.
+
+Assume now we are back in a world **with** the unit law. You may then formulate the following proof (excuse any formal inaccuracies or details missed in the following proof, I am a bit rusty).
+
+Consider, for a contradiction, that my conjecture:<br> `ID ; ID ; ID ; dom(ID) = dom(ID)` and <br>`cod(ID) ; ID ; ID ; ID = cod(ID)` <br>do not hold. Thus, for the first case, we have:<br> `ID ; ID ; ID ; dom(ID) != dom(ID)`<br> Well, consider the following:
+```
+1. from the unit law, we know: ID ; dom(ID) = dom(ID)
+2. simplifying the original expression we get: ID ; ID ; dom(ID)
+3. simplify again: ID ; dom(ID)
+4. and finally: dom(ID)
+``` 
+
+Thus, we have shown `ID ; ID ; ID ; dom(ID) = dom(ID)`, which is a contradiction. Since we have found a contradiction, we have in fact shown that the original conjecture is always true.
+
+With the above proof, your pessimistic friend was finally convinced - and hopefully you, *the reader*, are now also convinced that axioms are important!
 
 ***
 
@@ -133,7 +232,7 @@ From the above, it's clear `1 = 2 = 3`.
 ***
 
 ### So what?
-Well, we now have the ability to **combine** and discuss **equality** of arrows. With these tools, we can begin to reason about transitions between objects within our world in interesting ways. Without the addition of any more operations (observations) or axioms (assumptions), we can draw parallels to the real world to make some sense of this: <br>
+Well, we now have the ability to **combine** and discuss **equality** of arrows. With these tools, we can begin to reason about transitions between objects within our world in interesting ways. Without the addition of any more operations or axioms, we can draw parallels to the real world to make some sense of this: <br>
 
 **Driving** (*get from one location to another*): <br>
 *[objects]:* locations<br>
@@ -151,6 +250,56 @@ Well, we now have the ability to **combine** and discuss **equality** of arrows.
 *[objects:]* types<br>
 *[arrows:]* functions<br>
 
-With four operations and two axioms AND ONLY these four operations and two axioms, we can already reason about transitions and relations between objects within very different worlds (or structures).
+#### But actually though, who cares?
+
+Ok, tough crowd. Let's discuss a hypothetical situation using concepts from above in the world of *driving*. Let's say you want to get to strabucks - you're halfway through some ridiculous article on *Category Theory* and need an energy boost. Since you're new in town, so you ask a stranger for directions. Here is how it goes:
+
+**You** Hello, I just moved to Seattle, where is the closest Starbucks?
+
+**Stranger 1:** Welcome! Well, if you take road `A` to road `B`, take a right onto `H`, you'll come up to `E`. From there, you'll see one on your left (path: `E ; H ; B ; A`).
+
+<div style="text-align:center"><img src="https://imgur.com/bLrObTs.png" /></div>
+
+**Stranger 2:** Hold on there mate, I know a better route. Instead of taking `H`, you can avoid the notorious pothole and instead take `G` to `ID`, which goes between `G` and `F`, and end up on `F`. From there you'll go a few blocks before arriving (path: `F ; ID ; G ; B ; A`).
+
+<div style="text-align:center"><img src="https://imgur.com/DNoKmWd.png" /></div>
+
+**You:** thanks for the input, however, if I know that `G` is the beginning of `ID` (`domain`) and `F` is the end of `ID` (`codomain`), can't I just go straight from `G` to `F`?
+
+**Stranger 2:** oh yeah, you're a bright fellow. By the `unit law` you're correct (new path: `F ; G ; B ; A`)!
+
+**Stranger 3:** well how about just going from `A` to `B` to `G` to `C` to `D`, a scenic route great for newcomers, *and then to `E`* (path: `E ; D ; C ; G ; B ; A`)?
+
+<div style="text-align:center"><img src="https://imgur.com/k9YGePw.png" /></div>
+
+**You:** ok, ok, I need to map all this out. Here we go, these are my options correct? [all nod in approval]
+
+<div style="text-align:center"><img src="https://imgur.com/l3L6k0M.png" /></div>
+
+**Stranger 3:** how about I simplify this map a bit. Since traffic in Seattle is the same everywhere and all roads are equally good (*in this parallel world, not real Seattle*), we get the following (note, as before `;` means composition and describes transitions, applied from right-to-left):
+
+<div style="text-align:center"><img src="https://imgur.com/e72BrAp.png" /></div>
+
+**Stranger 2:** oh!! I see where you're taking us [takes the paper]. From here we can construct the following commutative diagram:
+
+<div style="text-align:center"><img src="https://imgur.com/LI2ENDd.png" /></div>
+
+**Stranger 1:** so by this commutative diagram and the `associativity`, this young lad can either take `A` to `D` to `C ; B` or he can take `A` to `B ; D` to `C`. These routes are in fact equal!
+
+**You:** awesome, thanks y'all!
+
+And from there you hop in your car and get on your way.
+
+***
+
+### Conclusion
+
+If you made it this far, congratulations! I did not anticipate the length of this first blog post. Size aside, I hope it is now clear how powerful and useful this stuff is; with four operations and two axioms AND ONLY these four operations and two axioms, we can already reason about transitions and relations between objects within very different worlds (or structures).
 
 <div style="text-align:center"><img src="https://media.giphy.com/media/1034EEGrn91SrS/giphy.gif" /></div>
+
+***
+
+### Feedback
+
+Do you have questions, comments, or concerns??? If so, please [leave your feedback here](https://github.com/robertDurst/CategoryTheoryBlogFeedback). Thanks!
