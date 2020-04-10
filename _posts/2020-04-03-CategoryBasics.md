@@ -73,7 +73,7 @@ A graph `G` with: `O` = { 🍊, 🍋, 🍌 } and `A` = { `f`, `g`, `h` } may loo
 <br>
 Let's introduce some `operations`:
 * **domain (dom)**: given an `arrow` return the `object` to its left
-* **codomain (cod)**: given an `arrow` return the `object` to its left
+* **codomain (cod)**: given an `arrow` return the `object` to its right
 
 <br>
 **Example:**<br>
