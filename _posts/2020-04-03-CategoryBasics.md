@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Category Theory Series] I: To Categories From First Principles"
+title:  "To Categories From First Principles"
 date:   2020-04-03 19:19:21 +0700
 ---
 
@@ -27,6 +27,8 @@ So why is this stuff interesting? Since I have no clout here, I am just YAPB (ye
 
 ### Preface
 **STOP:** do not read any further. Before beginning your journey here, you must first *unthink* and *unknow* any presumptions you may have about Category Theory, Sets, Math, the World, etc. Let's begin with an absolutely clean slate.
+
+**Note:** this explanation is meant to be incredibly simple and for ANYONE of ANY background. Thus, some of the mathematical concepts, especially my negligence of Set Theory, are not 100% correct and may lead readers askew if they dive deeper into Category Theory without this knowledge (*edit after Reddit feedback*).
 
 ***
 
@@ -297,9 +299,3 @@ And from there you hop in your car and get on your way.
 If you made it this far, congratulations! I did not anticipate the length of this first blog post. Size aside, I hope it is now clear how powerful and useful this stuff is; with four operations and two axioms AND ONLY these four operations and two axioms, we can already reason about transitions and relations between objects within very different worlds (or structures).
 
 <div style="text-align:center"><img src="https://media.giphy.com/media/1034EEGrn91SrS/giphy.gif" /></div>
-
-***
-
-### Feedback
-
-Do you have questions, comments, or concerns??? If so, please [leave your feedback here](https://github.com/robertDurst/CategoryTheoryBlogFeedback). Thanks!
