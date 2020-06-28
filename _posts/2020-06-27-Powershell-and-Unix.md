@@ -152,7 +152,7 @@ wriite       =>
 
 Ah, so we have what we want, but now it is in this wonky table. IMO, this is an unfortunate side-effect of powershell's object approach. However, it is not that hard to transform the output into the desired format:
 ```
-> >  Get-Content text.txt | % {$_.Split(" ").ToLower()} | Sort | Get-Unique | Compare-Object (Get-Content) dictionary) | Where-Object {$_.SideIndictor -eq "=>} | Select-Object "InputObject" | Format-Table -HideTableHeaders
+> Get-Content text.txt | % {$_.Split(" ").ToLower()} | Sort | Get-Unique | Compare-Object (Get-Content) dictionary) | Where-Object {$_.SideIndictor -eq "=>} | Select-Object "InputObject" | Format-Table -HideTableHeaders
 wriite
 ```
 
