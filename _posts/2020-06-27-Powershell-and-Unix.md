@@ -4,11 +4,17 @@ title:  "Two Flavors of Pipes"
 date:   2020-06-27 19:19:21 +0700   
 --- 
 
-June 1 I started my journey at DocuSign. While starting remote has been a bit weird, I have had an incredible experience so far, shipped some code, learned some things, and even made a fool of myself a couple times. I am extremely grateful that I am able to find employment in these crazy times, especially meaningful and interesting employment. DocuSign is a C# house, so I have been migrating away from C++ & Linux focused development into new, uncharted waters. A side effect of this is moving from Unix --> Powershell for some of the automated scripting. Just before I started at DocuSign, I gained a newfound appreciation for Unix (and Unix pipes) after reading Brian Kernighan's latest book [Unix: A History and Memoir](https://www.cs.princeton.edu/~bwk/). Never used pipes? Well, today is your lucky day! This post will show you how to use pipes in Unix and then how a similar effect can be created in powershell.
+On June 1, I started my journey at DocuSign. While starting remote has been a bit weird, I have had an incredible experience so far, shipped some code, learned some things, and even made a fool of myself a couple times. I am extremely grateful that I am able to find employment in these crazy times, especially meaningful and interesting employment. There is lots of C# at DocuSign, so I have been migrating away from C++ & Linux focused development into new, uncharted waters. A side effect of this is moving from Unix --> Powershell for some of the automated scripting. Just before I started at DocuSign, I gained a newfound appreciation for Unix (and Unix pipes) after reading Brian Kernighan's latest book [Unix: A History and Memoir](https://www.cs.princeton.edu/~bwk/). Never used pipes? Well, today is your lucky day! This post will show you how to use pipes in Unix and then how a similar effect can be created in powershell.
 
 ## Pipes
 
-Ah yes, so what is a pipe? This is a good place to start :) . Pipes, or more formally a pipeline, is basically a mechanism for chaining multiple processes together by feeding the output of one into the input of the next. A slightly more computer-sciency way of saying this is *"a set of processes chained together by their standard streams, so that the output text of each process (stdout) is passed directly as input (stdin) to the next one"* - ([Wikipedia](https://en.wikipedia.org/wiki/Pipeline_(Unix))). So yes, a pipeline is probably almost exactly what you thought it was. This concept that was first brought into the world of computing by [Douglas McIlroy](https://en.wikipedia.org/wiki/Douglas_McIlroy) at Bell Labs (and subsequently implemented into Unix by the mythical [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson). Here is a fantastic quote about the invention of the pipe: *"His ideas were implemented in 1973 when ("in one feverish night", wrote McIlroy) Ken Thompson added the pipe() system call and pipes to the shell and several utilities in Version 3 Unix. "The next day", McIlroy continued, "saw an unforgettable orgy of one-liners as everybody joined in the excitement of plumbing.""* ([Wikipedia](https://en.wikipedia.org/wiki/Pipeline_(Unix))).
+![pipes gif](https://media.giphy.com/media/9PzaDXcbo9a45a5Y22/giphy.gif)
+
+Ah yes, so what is a pipe? This is a good place to start. Pipes, or more formally a pipeline, is basically a mechanism for chaining multiple processes together by feeding the output of one into the input of the next. A slightly more computer-sciency way of saying this is *"a set of processes chained together by their standard streams, so that the output text of each process (stdout) is passed directly as input (stdin) to the next one"* - ([Wikipedia](https://en.wikipedia.org/wiki/Pipeline_(Unix))). So yes, a pipeline is probably almost exactly what you thought it was. 
+
+![Doug McIlroy](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Douglas_McIlroy.jpeg/220px-Douglas_McIlroy.jpeg)
+
+This concept that was first brought into the world of computing by [Douglas McIlroy](https://en.wikipedia.org/wiki/Douglas_McIlroy) at Bell Labs (and subsequently implemented into Unix by the mythical [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson). Here is a fantastic quote about the invention of the pipe: *"His ideas were implemented in 1973 when ("in one feverish night", wrote McIlroy) Ken Thompson added the pipe() system call and pipes to the shell and several utilities in Version 3 Unix. "The next day", McIlroy continued, "saw an unforgettable orgy of one-liners as everybody joined in the excitement of plumbing.""* ([Wikipedia](https://en.wikipedia.org/wiki/Pipeline_(Unix))).
 
 
 ## Pipes in Unix
@@ -88,7 +94,7 @@ Ok, so you run Windows but still want to impress your friends. How does the abov
 
 It turns out there are pipes, and have been for quite a while. However, they come with one small caveat... **when piping in the powershell, output is formatted as objects, not just unformatted streams of text**. This actually turns out to be quite useful! Let's dive in and see how we can recreate the above.
 
-To start with, we could use cat, but that seems like cheating... let's use a powershell cmdlet! Cmdlets are powershell methods. Many useful ones are included with Windows and you can of course write your own as well.
+To start with, we could use cat, but that seems like cheating... let's use a powershell cmdlet! [Cmdlets](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7#:~:text=A%20cmdlet%20is%20a%20lightweight,them%20programmatically%20through%20PowerShell%20APIs.) are powershell methods. Many useful ones are included with Windows and you can of course write your own as well.
 ```
 > Get-Content text.txt
 I like to write commands using pipes and pipes are what I like to wriite
@@ -114,7 +120,7 @@ to
 wriite
 ```
 
-Now it is time to sort and remove duplicates. Windows ships some similar commands: `Sort` and `Get-Unique`:
+Now it is time to sort and remove duplicates. Windows ships some similar commands to what we used in Unix: `Sort` and `Get-Unique`:
 ```
 >  Get-Content text.txt | % {$_.Split(" ").ToLower()} | Sort | Get-Unique
 and
@@ -144,7 +150,7 @@ Ah, so we have what we want, but now it is in this wonky table. IMO, this is an 
 wriite
 ```
 
-My apologies, I realize that this one-liner is now flowing into the abyss off the right side of the code box. That being said, I actually believe this one-liner is actually much more readable than the unix one, albeit that takes away some of the fantastical magic that comes with it when you try to impress your friends.
+My apologies, I realize that this one-liner is now flowing into the abyss off the right side of the code box. That being said, I actually believe this one-liner is much more readable than the unix one, albeit that takes away some of the fantastical magic that comes with it when you try to impress your friends.
 
 ## Conclusion
 
@@ -152,4 +158,5 @@ So, besides this being an interesting exercise, what's the point? My point is th
 * closed source evil
 * Microsoft bad, Linux good
 * do you use Rust? Why don't you use Rust?
-This is of course a minor exaggeration. That being said, I am learning (or rather relearning if you talk to my 11th grade English professor) it is almost always best to take a nuanced approach - by considering the tradeoffs of a decision and both/all points of view, you end up with a much stronger, more comprehensive final outcome. In software this means using Linux when appropriate and Windows when it is not. In astrophotography, it means taking some wide-angle shots and some close-ups. In collegiate track and field 400m training, it means 1000m workouts and 50m speed work.So, since I'll probably be living in both Windows and Unix systems for the next X years of my software engineering career, it'll pay off to understand both. 
+
+This is of course a minor exaggeration. That being said, I am learning (or rather relearning if you talk to my 11th grade English professor) it is almost always best to take a nuanced approach - by considering the tradeoffs of a decision and both/all points of view, you end up with a much stronger, more comprehensive final outcome. In software this means using Linux when appropriate and Windows when it is not. In astrophotography, it means taking some wide-angle shots and some close-ups. In collegiate track and field 400m training, it means 1000m workouts and 50m speed work (yes 1k's are no fun for short sprinters, but hey, I cut 4 sec off my 400 pr in one season, thanks [Dave](https://www.gocolbymules.com/sports/mtrack/coaches/Dave_Cusano?view=bio)). So, since I'll probably be living in both Windows and Unix systems for the next X years of my software engineering career, it'll pay off to understand both. 
