@@ -91,7 +91,7 @@ wriite
 Yep, so next time you're in a Zoom party with friends on a Friday night, share your screen and impress them with this.
 
 <p align="center">
-  <img src="https://media.giphy.com/media/osxPzWdSkfhXG/giphy.gif" />
+  <img src="https://media.giphy.com/media/nbNVIe8Y0AEyit5qV0/giphy.gif" />
 </p>
 
 ## Pipes in Powershell
