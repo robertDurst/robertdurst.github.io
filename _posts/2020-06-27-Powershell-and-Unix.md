@@ -15,7 +15,8 @@ On June 1, I started my journey at DocuSign. While starting remote has been a bi
 Ah yes, so what is a pipe? This is a good place to start. Pipes, or more formally a pipeline, is basically a mechanism for chaining multiple processes together by feeding the output of one into the input of the next. A slightly more computer-sciency way of saying this is *"a set of processes chained together by their standard streams, so that the output text of each process (stdout) is passed directly as input (stdin) to the next one"* - ([Wikipedia](https://en.wikipedia.org/wiki/Pipeline_(Unix))). So yes, a pipeline is probably almost exactly what you thought it was. 
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Douglas_McIlroy.jpeg/220px-Douglas_McIlroy.jpeg" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Douglas_McIlroy.jpeg/220px-Douglas_McIlroy.jpeg" /><br>
+  Douglas McIlroy
 </p>
 
 This concept that was first brought into the world of computing by [Douglas McIlroy](https://en.wikipedia.org/wiki/Douglas_McIlroy) at Bell Labs (and subsequently implemented into Unix by the mythical [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson). Here is a fantastic quote about the invention of the pipe: *"His ideas were implemented in 1973 when ("in one feverish night", wrote McIlroy) Ken Thompson added the pipe() system call and pipes to the shell and several utilities in Version 3 Unix. "The next day", McIlroy continued, "saw an unforgettable orgy of one-liners as everybody joined in the excitement of plumbing.""* ([Wikipedia](https://en.wikipedia.org/wiki/Pipeline_(Unix))).
