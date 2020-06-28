@@ -24,7 +24,7 @@ This concept that was first brought into the world of computing by [Douglas McIl
 
 ## Pipes in Unix
 
-Ok, time for an example. For anyone running a version of Unix, MacOS, Ubuntu, any Linux derivative, etc. this one is for you. I will be creating an example very similar to Brian Kernighan's favorite example - we will be determining the misspelled words in a text file.
+Ok, time for an example. For anyone running a version of Unix, MacOS, Ubuntu, any Linux derivative, etc. this one is for you (feel free to open up terminal and follow along - I ran each line of code as I wrote this so the examples should work). I will be creating an example very similar to Brian Kernighan's favorite example - we will be determining the misspelled words in a text file.
 
 For starters, we have a textfile (text.txt):
 
@@ -90,10 +90,6 @@ wriite
 ```
 
 Yep, so next time you're in a Zoom party with friends on a Friday night, share your screen and impress them with this.
-
-<p align="center">
-  <img src="https://media.giphy.com/media/nbNVIe8Y0AEyit5qV0/giphy.gif" />
-</p>
 
 ## Pipes in Powershell
 
