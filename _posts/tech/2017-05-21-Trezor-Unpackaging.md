@@ -2,6 +2,7 @@
 layout: post
 title:  "Trezor Unpackaging and Review"
 date:   2017-05-21 19:19:21 +0700
+tech: true
 ---
 
 **Original post:** [link](https://steemit.com/trezor/@robertdurst10/white-trezor-wallet-unpackaging-and-first-impression)

@@ -2,6 +2,7 @@
 layout: post
 title:  "Dynamic Programming"
 date:   2019-10-12 19:19:21 +0700
+tech: true
 ---
 
 So everyone who ever lived and learned algorithms, at some point in their journey, excitedly typed out a "how dynamic programming works" blog post. Ladies and Gentleman, this is not it. Instead, this is simply just some fun with python and proving to myself that this dynamic programming stuff is cool and useful. If you are looking for a how to on dynamic programming, I would totally recommend [The Algorithm Design Manual](http://www.algorist.com/)!

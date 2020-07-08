@@ -2,6 +2,7 @@
 layout: post
 title:  "Adventures in PL: Inferring Function Signatures in JavaScript"
 date:   2019-10-21 19:19:21 +0700
+tech: true
 ---
 
 

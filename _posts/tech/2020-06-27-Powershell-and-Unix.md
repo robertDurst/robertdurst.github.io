@@ -2,6 +2,7 @@
 layout: post  
 title:  "Two Flavors of Pipes"
 date:   2020-06-27 19:19:21 +0700   
+tech: true
 --- 
 
 On June 1, I started my journey at DocuSign. While starting remote has been a bit weird, I have had an incredible experience so far, shipped some code, learned some things, and even made a fool of myself a couple times. I am extremely grateful that I am able to find employment in these crazy times, especially meaningful and interesting employment. There is lots of C# at DocuSign, so I have been migrating away from C++ & Linux focused development into new, uncharted waters. A side effect of this is moving from Unix --> Powershell for some of the automated scripting. Just before I started at DocuSign, I gained a newfound appreciation for Unix (and Unix pipes) after reading Brian Kernighan's latest book [Unix: A History and Memoir](https://www.cs.princeton.edu/~bwk/). Never used pipes? Well, today is your lucky day! This post will show you how to use pipes in Unix and then how a similar effect can be created in powershell.

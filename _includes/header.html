@@ -1,8 +1,62 @@
-<aside class="logo">
 
-	{% if page.url == '/index.html' or page.url == '/' %}
+
+<div>
+	<label class="switch" id="switch">
+		<input type="checkbox" id="checkbox" class="checkbox">
+		<span class="slider round"></span>
+	  </label>
+	  <script>
+	
+
+		$(document).ready(function(){
+			var splitted = window.location.href.split("/");
+				var page = splitted[splitted.length-1];
+
+			if (page == "stars.html" || page == "stars") {
+				$("#checkbox").click();
+				$("#body").addClass("stars");
+				window.localStorage.setItem("stars", true);
+
+		} else if (page == "" || page == "/" || page == "index.html") {
+			window.localStorage.removeItem("stars", false);
+
+		} else if (window.localStorage.getItem("stars")) {
+			$("#body").addClass("stars");
+			var x = "{{ % assign stars = 'true' %}}";
+		}
+
+		if (page == "about") {
+				$("#switch").hide();
+
+		}
+			$("#checkbox").change( function(){ 
+				
+				if (page == "" || page == "/" || page == "index.html") {
+					window.location.href = "stars.html";
+					window.localStorage.setItem("stars", true);
+
+		} else {
+			window.localStorage.removeItem("stars", false);
+			window.location.href = "index.html";
+
+
+		}
+				
+			 })
+});
+
+
+	</script>
+</div>
+
+<aside class="logo">
+	
+	{% if page.url == '/index.html' or page.url == '/'%}
 		{% assign link = '/about' %}
 		{% assign prompt = 'About the Author' %}
+	{% elsif page.url == '/stars'  or page.stars %}
+		{% assign link = '/stars' %}
+		{% assign prompt = 'Back to Stars' %}
 	{% else %}
 		{% assign link = '/' %}
 		{% assign prompt = 'Back to Index' %}

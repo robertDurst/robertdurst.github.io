@@ -2,6 +2,7 @@
 layout: post
 title:  "Bitcoin Core Devs Meetup: Forking Meetup Panel Notes"
 date:   2017-06-03 19:19:21 +0700
+tech: true
 ---
 
 **Original:** [link](https://steemit.com/bitcoin/@robertdurst10/my-notes-from-the-bitcoin-forking-panel-meetup-silicon-valley-what-an-incredible-event-and-the-future-of-bitcoin-is-bright)

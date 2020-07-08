@@ -2,6 +2,7 @@
 layout: post
 title:  "Blind Digitial Signature Voting Scheme"
 date:   2017-04-12 19:19:21 +0700
+tech: true
 ---
 
 **Original post:** [link](https://steemit.com/cryptography/@robertdurst10/blind-digital-signature-voting-scheme-implementation)

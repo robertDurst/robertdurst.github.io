@@ -2,6 +2,7 @@
 layout: post
 title:  "My First Open Source Contribution!"
 date:   2018-01-04 19:19:21 +0700
+tech: true
 ---
 
 **Original:** [link](https://steemit.com/developer/@robertdurst10/developer-milestone-first-open-source-contribution)

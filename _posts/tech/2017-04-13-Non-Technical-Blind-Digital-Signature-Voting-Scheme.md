@@ -2,6 +2,7 @@
 layout: post
 title:  "Blind Digitial Signature Voting Scheme (Non-technical Explanation)"
 date:   2017-04-13 19:19:21 +0700
+tech: true
 ---
 
 **Original post:** [link](https://steemit.com/cryptography/@robertdurst10/blind-digital-signatures-v2-0-non-technical)

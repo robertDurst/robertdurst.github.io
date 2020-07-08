@@ -2,6 +2,7 @@
 layout: post
 title:  "To Categories From First Principles"
 date:   2020-04-03 19:19:21 +0700
+tech: true
 ---
 
 Welcome! Somehow you have managed to find the first post in my *Category Theory Series*. Embarrassingly, my motivation for diving into Category Theory partially comes from a desire to understand the humor [in this video](https://www.youtube.com/watch?v=ADqLBc1vFwI). Yet from the most innocent of beginnings, here I am, here you are. What's this nonsense all about?

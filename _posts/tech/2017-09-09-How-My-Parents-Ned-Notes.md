@@ -2,6 +2,7 @@
 layout: post
 title:  "How my Parents's Dislike of Video Games brought @ned to the Bay Area: A Thought Experiment"
 date:   2017-09-09 19:19:21 +0700
+tech: true
 ---
 
 **Original:** [link](https://steemit.com/steemit/@robertdurst10/how-my-parents-s-dislike-of-video-games-brought-ned-to-the-bay-area-a-thought-experiment)

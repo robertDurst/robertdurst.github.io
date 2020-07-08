@@ -2,6 +2,7 @@
 layout: post
 title:  "Steemit Meme Contest #8 Winning Meme"
 date:   2017-01-17 19:19:21 +0700
+tech: true
 ---
 
 **Original post:** [link](https://steemit.com/memechallenge/@robertdurst10/meme-challenge-8-entry-1)

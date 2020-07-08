@@ -2,6 +2,7 @@
 layout: post
 title:  "Horizon School of Technology Blog Series"
 date:   2017-12-1 19:19:21 +0700
+tech: true
 ---
 
 During my time at the [Horizon's School of Technology Coding Bootcamp](joinhorizons.com) I wrote a series of blog posts:

@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+
+
+
+<div style="align-items: center;align-content: center; text-align: center;">
+	<img src="https://robbob77.github.io/assets/stars/deathValley/3.jpg"/>
+	<figcaption class="code">Me stargazing with my AWB Onesky in Death Valley. </figcaption><br/>
+	<figcaption class="code">Images on this webpage are almost exlusively the work of my brother. <a href="https://robbob77.github.io">See more of his photography magic here.</a></figcaption>
+</div>
+<section>
+    
+    {% for post in site.posts %}
+        {% if post.stars != null %}
+        {% unless post.next %}
+			<h3 class="code">{{ post.date | date: '%Y' }}</h3>
+		{% else %}
+			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+			{% if year != nyear %}
+				<h3 class="code">{{ post.date | date: '%Y' }}</h3>
+			{% endif %}
+		{% endunless %}
+
+		<ul>
+			<li>
+				<div class="post-date code">
+					<span>{{ post.location }} - {{ post.date | date: "%b %d" }}</span>
+				</div>
+				<div class="title">
+					<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" class="stars" >{{ post.title }}</a>
+				</div>
+			</li>
+		</ul>
+        {% endif %}
+	{% endfor %}
+
+</section>

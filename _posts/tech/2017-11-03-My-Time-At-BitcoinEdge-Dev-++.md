@@ -2,6 +2,7 @@
 layout: post
 title:  "Bitcoin Edge Dev ++: My Experience"
 date:   2017-11-03 19:19:21 +0700
+tech: true
 ---
 
 **Original:** [link](https://steemit.com/bitcoin/@robertdurst10/bitcoin-edge-dev-2-day-technical-bootcamp-taught-by-some-of-the-best-my-experience-and-how-far-i-ve-come)
