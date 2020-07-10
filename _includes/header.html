@@ -1,5 +1,4 @@
 
-
 <div>
 	<label class="switch" id="switch">
 		<input type="checkbox" id="checkbox" class="checkbox">
@@ -45,10 +44,10 @@
 			 })
 });
 
-
 	</script>
 </div>
 
+{% if page.url != '/stars.html' and page.url != '/stars'%}
 <aside class="logo">
 	
 	{% if page.url == '/index.html' or page.url == '/'%}
@@ -66,5 +65,5 @@
 		<img src="{{ site.logo_url }}" class="logo-avatar">
 	</a>
 	<span class="logo-prompt code">{{ prompt }}</span>
-
 </aside>
+{% endif %}
