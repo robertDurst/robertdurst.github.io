@@ -469,3 +469,14 @@ input:checked + .slider:before {
   background-color: black;
   color: white !important;
 }
+
+.stacked_ul {
+  list-style-type: disc;
+}
+.stacked_li{
+  float: left;
+  width: 50%;//helps to determine number of columns, for instance 33.3% displays 3 columns
+  list-style-type: square;
+  margin-top: 0.25px;
+  margin-bottom: 0.25px;
+}

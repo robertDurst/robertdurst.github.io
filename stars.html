@@ -10,8 +10,19 @@ layout: default
 	<figcaption class="code">Me stargazing with my AWB Onesky in Death Valley. </figcaption><br/>
 	<figcaption class="code">Images on this webpage are almost exlusively the work of my brother. <a href="https://robbob77.github.io">See more of his photography magic here.</a></figcaption>
 </div>
+
 <section>
-    
+
+    <div>
+		{% assign foo = site.posts | map : "new_spots" | compact | sort %}
+		<h3 class="code">Observation List</h3>
+		{% for spot in foo %}
+		<ul class="stacked_lu">
+			<li class="stacked_li">{{ spot }}</li>
+		</ul>
+		{% endfor %}
+	</div>
+	<h1 style="text-align: center;">Blog</h1>
     {% for post in site.posts %}
         {% if post.stars != null %}
         {% unless post.next %}
