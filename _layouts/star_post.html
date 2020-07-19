@@ -35,7 +35,7 @@ layout: default
     <h6>First time observations:</h6>
 
         {% for star in page.new_spots %}
-            <li>{{ star }}</li>
+            <li><a class="planet_link" href={{ star.link }}>{{ star.name }}</a></li>
         {% endfor %}
     </ul>
     

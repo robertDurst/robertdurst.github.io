@@ -12,16 +12,32 @@ layout: default
 </div>
 
 <section>
+	
+	<hr style="color: white; margin-top: 25px;">
 
-    <div>
-		{% assign foo = site.posts | map : "new_spots" | compact | sort %}
-		<h3 class="code">Observation List</h3>
-		{% for spot in foo %}
-		<ul class="stacked_lu">
-			<li class="stacked_li">{{ spot }}</li>
+    <div style="margin-bottom: 50px;">
+		{% assign foo = site.posts | map : "new_spots" | compact | sort: "name" %}
+		<h3 class="code" style="text-decoration: underline;">Observation List</h3>
+
+		<h4 class="code">Messier Objects</h4>
+		<ul>
+			{% for spot in foo %}
+				{% if spot.isMessier %}
+					<li style="list-style: disc;margin: 0.25pt 0;"><a class="planet_link" style="color:white" {{ spot.link }}>{{ spot.name }}</a></li>
+				{% endif %}
+			{% endfor %}
 		</ul>
-		{% endfor %}
+		
+		<h4 class="code">Misc. Objects</h4>
+		<ul class="stacked_lu">
+			{% for spot in foo %}
+				{% unless spot.isMessier %}
+					<li class="stacked_li"> <a href={{ spot.link }} class="planet_link" style="color:white; margin: 0.25pt 0">{{ spot.name }}</a></li>
+				{% endunless %}
+			{% endfor %}
+		</ul>
 	</div>
+	<hr style="color: white; margin-top: 125px;">
 	<h1 style="text-align: center;">Blog</h1>
     {% for post in site.posts %}
         {% if post.stars != null %}
