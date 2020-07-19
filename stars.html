@@ -23,7 +23,7 @@ layout: default
 		<ul>
 			{% for spot in foo %}
 				{% if spot.isMessier %}
-					<li style="list-style: disc;margin: 0.25pt 0;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a></li>
+					<li style="list-style: disc;margin: 0.25pt 0; color:darkgrey;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a> (first observed {{ spot.date }})</li>
 				{% endif %}
 			{% endfor %}
 		</ul>
