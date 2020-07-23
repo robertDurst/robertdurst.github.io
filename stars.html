@@ -27,13 +27,40 @@ layout: default
 				{% endif %}
 			{% endfor %}
 		</ul>
+
+		<h4 class="code">Double Stars</h4>
+		<ul>
+			{% for spot in foo %}
+				{% if spot.isDoubleStar %}
+					<li style="list-style: disc;margin: 0.25pt 0; color:darkgrey;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a> (first observed {{ spot.date }})</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+
+		<h4 class="code">Comets</h4>
+		<ul>
+			{% for spot in foo %}
+				{% if spot.isComet %}
+					<li style="list-style: disc;margin: 0.25pt 0; color:darkgrey;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a> (first observed {{ spot.date }})</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+
+		<h4 class="code">Planets</h4>
+		<ul>
+			{% for spot in foo %}
+				{% if spot.isPlanet %}
+					<li style="list-style: disc;margin: 0.25pt 0; color:darkgrey;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a> (first observed {{ spot.date }})</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
 		
 		<h4 class="code">Misc. Objects</h4>
 		<ul class="stacked_lu">
 			{% for spot in foo %}
-				{% unless spot.isMessier %}
+				{% if spot.isMisc %}
 					<li class="stacked_li"> <a href={{ spot.link }} class="planet_link" style="color:white; margin: 0.25pt 0">{{ spot.name }}</a></li>
-				{% endunless %}
+				{% endif %}
 			{% endfor %}
 		</ul>
 	</div>
