@@ -8,7 +8,7 @@ layout: default
 <div style="align-items: center;align-content: center; text-align: center;">
 	<img src="https://robbob77.github.io/assets/stars/deathValley/3.jpg" style="width: 600px;height: 400px;"/>
 	<figcaption class="code">Me stargazing with my AWB Onesky in Death Valley. </figcaption><br/>
-	<figcaption class="code">Images on this webpage are almost exlusively the work of my brother. <a href="https://robbob77.github.io">See more of his photography magic here.</a></figcaption>
+	<figcaption class="code">This header image (and all Milky Way images) come courtesy of my brother. <a href="https://robbob77.github.io">See more of his photography magic here.</a></figcaption>
 </div>
 
 <section>
@@ -23,7 +23,7 @@ layout: default
 		<ul>
 			{% for spot in foo %}
 				{% if spot.isMessier %}
-					<li style="list-style: disc;margin: 0.25pt 0; color:darkgrey;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a> (first observed {{ spot.date }})</li>
+					<li style="list-style: disc;margin: 0.25pt 0; color:darkgrey;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a> (first observed {{ spot.date }}){% if spot.bestPhoto %}<br>(<a class="planet_link" style="color:white" href={{ spot.bestPhoto }}>Best Photo on {{ spot.bestPhotoDate }} with {{ spot.bestPhotoDevice }}</a>){% endif %}</li>
 				{% endif %}
 			{% endfor %}
 		</ul>
@@ -32,7 +32,7 @@ layout: default
 		<ul>
 			{% for spot in foo %}
 				{% if spot.isDoubleStar %}
-					<li style="list-style: disc;margin: 0.25pt 0; color:darkgrey;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a> (first observed {{ spot.date }})</li>
+					<li style="list-style: disc;margin: 0.25pt 0; color:darkgrey;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a> (first observed {{ spot.date }}){% if spot.bestPhoto %}<br>(<a class="planet_link" style="color:white" href={{ spot.bestPhoto }}>Best Photo on {{ spot.bestPhotoDate }} with {{ spot.bestPhotoDevice }}</a>){% endif %}</li>
 				{% endif %}
 			{% endfor %}
 		</ul>
@@ -41,7 +41,7 @@ layout: default
 		<ul>
 			{% for spot in foo %}
 				{% if spot.isComet %}
-					<li style="list-style: disc;margin: 0.25pt 0; color:darkgrey;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a> (first observed {{ spot.date }})</li>
+					<li style="list-style: disc;margin: 0.25pt 0; color:darkgrey;"><a class="planet_link" style="color:white" href={{ spot.link }}>{{ spot.name }}</a> (first observed {{ spot.date }}){% if spot.bestPhoto %}<br>(<a class="planet_link" style="color:white" href={{ spot.bestPhoto }}>Best Photo on {{ spot.bestPhotoDate }} with {{ spot.bestPhotoDevice }}</a>){% endif %}</li>
 				{% endif %}
 			{% endfor %}
 		</ul>
