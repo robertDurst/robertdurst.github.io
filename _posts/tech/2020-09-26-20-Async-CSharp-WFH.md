@@ -1,6 +1,6 @@
 ---
 layout: post  
-title:  "Full Async in C# AND When Working From Home"
+title:  "Full Async in C# and When Working From Home"
 date:   2020-09-30 19:19:21 +0700   
 tech: true
 --- 
