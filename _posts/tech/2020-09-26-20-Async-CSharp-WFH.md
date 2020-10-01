@@ -29,7 +29,7 @@ Realizing this is a huge waste of time to sit there and do nothing, you put Jim'
 
 It turns out asynchronous communication and action, the switching between things instead of doing one thing at a time, can make a single person more productive. Isn't that why we are all so productive at home? Void of real-time interactions, we can optimize our time away by continuously keeping multiple things progressing at once, focusing on tasks we can progress forward and moving on when it becomes blocked (yes if you are in Zoom meetings all day - first off I empathize!!! - this won't apply to you). Sure it gets hard at times to context switch, resuming some work and remembering just what you were in the middle of doing. However, since the costs of waiting for things like email clients to load, phones to pick up (a.k.a. IO) outweigh the costs of remembering where you were, this method of work is much preferred.
 
-## When It All Come to a Halt
+## When It All Comes to a Halt
 
 Smooth sailing into lunch, you make note of the last two items on your list. Ecstatic about the prospect of an early weekend, you warm-up yesterday's leftovers and return to your standing desk. As you hit the button and wait for the desk to lower, an impending sense of dread creeps over your covid-19 "I stay inside all day because it's safe not because I am lazy" *dad-bod*.
 
