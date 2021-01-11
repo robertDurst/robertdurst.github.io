@@ -5,8 +5,6 @@ date:   2018-01-04 19:19:21 +0700
 tech: true
 ---
 
-**Original:** [link](https://steemit.com/developer/@robertdurst10/developer-milestone-first-open-source-contribution)
-
 # I am Now Officially an Open Source Contributor
 
 One of the coolest things about the blockchain/crypto craze in my opinion is the wealth of amazing open source projects. A goal of mine for a while has been to contribute to one of these projects, a sort of rite of passage in the crypto dev community. Well, I have finally made my first contribution!

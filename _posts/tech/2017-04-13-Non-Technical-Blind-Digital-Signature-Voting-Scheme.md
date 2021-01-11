@@ -5,9 +5,6 @@ date:   2017-04-13 19:19:21 +0700
 tech: true
 ---
 
-**Original post:** [link](https://steemit.com/cryptography/@robertdurst10/blind-digital-signatures-v2-0-non-technical)
-
-
 # The Non-Technical Guide for the Average Reader and Less Tech-Savvy Cryptocurrency Enthusiast
 
 ### The Problem:

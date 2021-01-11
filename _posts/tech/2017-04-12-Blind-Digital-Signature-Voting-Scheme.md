@@ -5,8 +5,6 @@ date:   2017-04-12 19:19:21 +0700
 tech: true
 ---
 
-**Original post:** [link](https://steemit.com/cryptography/@robertdurst10/blind-digital-signature-voting-scheme-implementation)
-
 ## Basic implementation of a Blind Digital Signature Voting Scheme in Python using RSA
 
 ![dancing cat](https://steemitimages.com/p/5CEvyaWxjaEsVUnNGyqbkS7pRBtq76DUohca25kDEK9zduSRqoj5q8gxdDtHmYQgk4gQCQQvtX5vxqZbb?format=match&mode=fit)

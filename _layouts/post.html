@@ -1,34 +1,12 @@
 ---
 layout: default
 ---
-
-<article class="article" id="article">
-
-	{% if page.stars %}
-	<script>
-	
-
-		$(document).ready(function(){
-				$("#switch").hide();
-				$("#body").addClass("stars");
-	});
-</script>
-{% else %}
-<script>
-	
-
-	$(document).ready(function(){
-			$("#switch").hide();
-});
-</script>
-	{% endif %}
+<article>
 	<div class="center">
 		<h1 class="title">{{ page.title }}</h1>
 		<time class="code">{{ page.date | date: '%B %-d, %Y' }}</time>
 	</div>
-
 	<div class="divider"></div>
-
 	{{ content }}
 
 </article>

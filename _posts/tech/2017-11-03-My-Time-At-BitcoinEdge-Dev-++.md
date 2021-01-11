@@ -5,8 +5,6 @@ date:   2017-11-03 19:19:21 +0700
 tech: true
 ---
 
-**Original:** [link](https://steemit.com/bitcoin/@robertdurst10/bitcoin-edge-dev-2-day-technical-bootcamp-taught-by-some-of-the-best-my-experience-and-how-far-i-ve-come)
-
 # Bitcoin Edge Dev++: An Incredible Experience and How I Got Here
 
 ![](https://steemitimages.com/DQmbJ82DF3E2F4fZAoTsv7dhMeQi8Xbij97KmPprMjZNbs2/Screen%20Shot%202017-11-04%20at%2010.04.24%20AM.png)
