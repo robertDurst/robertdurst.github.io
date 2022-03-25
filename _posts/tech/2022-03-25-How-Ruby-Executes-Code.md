@@ -1,7 +1,7 @@
 ---
 layout: post  
 title:  "Ruby Deep Dive I: How Ruby Executes Code"
-date:   2022-03-25 19:19:21 +0700   
+date:   2022-03-25 00:00:00 +0700   
 tech: true
 ---
 
