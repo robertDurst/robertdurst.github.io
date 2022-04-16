@@ -7,6 +7,8 @@ tech: true
 
 This announcement comes a bit pre-mature. While those close to me, my most immediate network, and my direct coworkers know, no one else does yet; I read online it's common courtesy to wait until 2 weeks into your new gig to tell the world. Whatever. So. For anyone who follows my blog close enough to discover this post (good on you, there's no RSS feed, so you must have wondered by here on your own accord), you get this announcement in advance (and with a bit of an explanation too).
 
+**EDIT (4/16/22) I do now have an RSS feed!**
+
 
 In true Linkedin fashion...
 
