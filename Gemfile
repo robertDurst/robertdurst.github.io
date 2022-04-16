@@ -15,3 +15,4 @@ gem 'jekyll-remote-theme'
 gem 'kramdown', versions['kramdown']
 gem 'github-pages', versions['github-pages']
 gem 'rake'
+gem 'jekyll-feed'
