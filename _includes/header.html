@@ -1,6 +1,12 @@
 <aside class="logo">
-	{% assign link = '/about' %}
-	{% assign prompt = 'About the Author' %}
+
+	{% if page.url == '/index.html' or page.url == '/'%}
+		{% assign link = '/about' %}
+		{% assign prompt = 'About the Author' %}
+	{% else %}
+		{% assign link = '/' %}
+		{% assign prompt = 'Back to Index' %}
+	{% endif %}
 
 	<a href="{{ link | prepend: site.baseurl | prepend: site.url }}">
 		<img src="{{ site.logo_url }}" class="logo-avatar">
