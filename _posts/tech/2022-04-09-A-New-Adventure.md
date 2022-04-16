@@ -21,7 +21,7 @@ Ok, Rob, so why?
 * DocuSign is a great company ([see here](https://www.glassdoor.com/Reviews/DocuSign-Reviews-E307604.htm)) among other awards/top ten lists they have been on.
 * My managers have been wonderful
 * The work is very interesting
-* The company (except for the "outlook" which Wall Street throws a tempertantrum...) has been performing incredible!
+* The company (except for the "outlook" which Wall Street throws a temper tantrum...) has been performing incredible!
 * Paper signatures WILL lose out in the long term
 
 If anyone is considering DocuSign, it's an absolutely fantastic company. Would recommend to anyone (and gladly help connect you with some of the platform folks doing technically interesting things).
@@ -97,7 +97,7 @@ I am blanking a bit this AM, but his framework went something like this:
 2. *What:* what are you working on?
 3. *With:* who do you work directly with?
 
-Based on the number of these you can answer positively, you can determine how good the opprotunity is:
+Based on the number of these you can answer positively, you can determine how good the opportunity is:
 
 1 --> good <br>
 2 --> great<br>
@@ -106,9 +106,9 @@ Based on the number of these you can answer positively, you can determine how go
 Here is how I'd answer:
 1. TBH I don't know a ton about the founders, but I do believe in the product and the mission, so let's give this a 0.5
 2. I will be able to own some perf things, so definitely a 1.
-3. I get to work with an old manager, and a few others that seem like awesome coworkers based on my interview conversations, so also a 1.
+3. I get to work with an old manager, and a few others that seem like awesome coworkers based on my interview conversations, thus this is also a 1.
 
-Thus, we get somewhere between a 2 and 3, *passing this test*.
+So, we get somewhere between a 2 and 3, *passing this test*.
 
 **Mentor:** is this an outsized opportunity?
 
@@ -118,7 +118,7 @@ Thus, we also *pass this test*.
 
 **Richard Hamming:** yes, another story from Hamming... sorry, not sorry.
 
-> Over on the other side of the dining hall was a chemistry table. I had worked with one of the fellows, Dave McCall; furthermore he was courting our secretary at the time. I went over and said, ``Do you mind if I join you?'' They can't say no, so I started eating with them for a while. And I started asking, ``What are the important problems of your field?'' And after a week or so, ``What important problems are you working on?'' And after some more time I came in one day and said, ``If what you are doing is not important, and if you don't think it is going to lead to something important, why are you at Bell Labs working on it?'' I wasn't welcomed after that; I had to find somebody else to eat with! That was in the spring. In the fall, Dave McCall stopped me in the hall and said, ``Hamming, that remark of yours got underneath my skin. I thought about it all summer, i.e. what were the important problems in my field. I haven't changed my research,'' he says, ``but I think it was well worthwhile.'' And I said, ``Thank you Dave,'' and went on. I noticed a couple of months later he was made the head of the department. I noticed the other day he was a Member of the National Academy of Engineering. I noticed he has succeeded. I have never heard the names of any of the other fellows at that table mentioned in science and scientific circles. They were unable to ask themselves, ``What are the important problems in my field?'' - Richard Hamming, You and Your Research
+> Over on the other side of the dining hall was a chemistry table. I had worked with one of the fellows, Dave McCall; furthermore he was courting our secretary at the time. I went over and said, ''Do you mind if I join you?'' They can't say no, so I started eating with them for a while. And I started asking, ''What are the important problems of your field?'' And after a week or so, ''What important problems are you working on?'' And after some more time I came in one day and said, ''If what you are doing is not important, and if you don't think it is going to lead to something important, why are you at Bell Labs working on it?'' I wasn't welcomed after that; I had to find somebody else to eat with! That was in the spring. In the fall, Dave McCall stopped me in the hall and said, ''Hamming, that remark of yours got underneath my skin. I thought about it all summer, i.e. what were the important problems in my field. I haven't changed my research,'' he says, ''but I think it was well worthwhile.'' And I said, ''Thank you Dave,'' and went on. I noticed a couple of months later he was made the head of the department. I noticed the other day he was a Member of the National Academy of Engineering. I noticed he has succeeded. I have never heard the names of any of the other fellows at that table mentioned in science and scientific circles. They were unable to ask themselves, ''What are the important problems in my field?'' - Richard Hamming, You and Your Research
 
 So, am I doing important work at Spring Health? 
 
