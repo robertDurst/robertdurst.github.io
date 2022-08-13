@@ -1,11 +1,11 @@
 ---
 layout: post  
-title:  "Napkin Math at Work: a Tool for Allocating Engineering Effort"
+title:  "Napkin Math at Work"
 date:   2022-08-13 00:00:00 +0700   
 tech: true
 ---
 
-I am about four months into my journey at [Spring Health](https://springhealth.com) and it's been a great learning experience thus far! Besides learning the ins-and-outs of Rails, a coworker and I have set up a load testing environment and utilized this to bring forth a few notable perf wins. Those stories are worthy of the official Spring Health Engineering... stay tuned!
+I am about four months into my journey at [Spring Health](https://springhealth.com) and it's been a great learning experience thus far! Besides learning the ins-and-outs of Rails, a coworker and I have set up a load testing environment and utilized this to bring forth a few notable perf wins. Those stories are worthy of the official Spring Health Engineering Blog... stay tuned!
 
 However, here's a sneak peak.
 
@@ -31,7 +31,7 @@ Yes, basic with a capital B. Basic stats and napkin math go a long way. Unconvin
 
 ![Bill Nye consider the following](https://media.giphy.com/media/SVL5Dws0bOSgE/giphy.gif)
 
-Let's say a company expects to process 100 million records next week. Since this is a fairly expensive job, they do it in batched tasks using separate resources from their production environment. You observe that, as is, the processing takes so long that it will still be in progress before the next batch of records come the following week.
+Let's say a company expects to process 100 million records next week. Since this is a fairly expensive job, they do it in batched tasks using separate resources from their production environment. You observe that, as is, the processing takes so long that it will still be in progress as the next batch of records come the following week.
 
 Let's add some more context.
 
@@ -40,38 +40,37 @@ Let's add some more context.
 1 task/container at a time
 100 records/task
 4 containers (4 cores each)
-350ms per processing per record
-500ms per task to save the results
+400ms per processing per record
 ```
 
 Thus, we can quickly guestimate how long processing currently takes.
 
 ```
-1 million tasks = 100 million / 100 batch size
+1 million tasks = 100 million records / 100 batch size
 250,000 concurrently executing tasks = 1 million / 4 containers
-4 sec = 350ms * 100 batch size + 500ms to save
-1,000,000 sec = 4 sec/task * 250,000 tasks
+40 sec = 400ms * 100 batch size
+10,000,000 sec = 40 sec/task * 250,000 tasks
 
-~11.5 days = 1,000,000 sec / (60 * 60 * 24)
+~16.5 weeks = 10,000,000 sec / (60 * 60 * 24 * 7)
 ```
 
 Putting on your thinking cap, you dig in to the data your APM presents and discover the following:
 
-* each separate record spends 150ms of processing time encrypting unused data
+* each separate record spends 175ms of processing time encrypting unused data
 * during processing, we batch 100 records at a time into a task, where each container can only execute one task at a time and each task is not that computationally expensive
 
 Is it worth the time to implement the possible changes we discovered above? 
 
-Since we don't need to encrypt the useless data, let's cut that (and on a closer look, we actually encrypt two useless fields, so let's cut both of those!!). The time to process a single record is now only 50ms! Furthermore, since each task is independent and computationally cheap, let's reconfigure our cloud cpu resources  to 16 containers, 1 core each. 
+Since we don't need to encrypt the useless data, let's cut that (and on a closer look, we actually encrypt two useless fields, so let's cut both of those!!). The time to process a single record is now only 50ms! Furthermore, since each task is independent and computationally cheap, let's reconfigure our cloud cpu resources to 16 containers, 1 core each. 
 
 With this, let's redo our math.
 
 ```
 1 million tasks = 100 million / 100 batch size
 62,500 concurrently executing tasks = 1 million / 16 containers
-0.55 sec = 50ms * 100 batch size + 500ms to save
-34,375 sec = 0.55 sec/task * 62,500 tasks
-~9.5 hours = 34,375 sec / (60 * 60)
+50 sec = 50ms * 100 batch size
+312,000 sec = 5 sec/task * 62,500 tasks
+~0.5 weeks = 312,500 sec / (60 * 60 * 24 * 7)
 ```
 
 Not only do these minimal changes sound trivial to implement, it's clearly worth our time. With just a bit of research and kindergarten level mathematics, we've made a broken process much cheaper, efficient, and bottomline... feasible.
