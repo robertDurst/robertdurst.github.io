@@ -77,4 +77,4 @@ Not only do these minimal changes sound trivial to implement, it's clearly worth
 
 ## Conclusion
 
-Napkin math is an art - it requires knowing what's important and what you can gloss over. Used effectively, it's a great tool for determining potential performance wins, ballparking future server traffic load, and quickly checking someone else's numbers. For me, it's be helpful in justifying how I spend my free cycles at Spring. 
+Napkin math is an art - it requires knowing what's important and what you can gloss over. Used effectively, it's a great tool for determining potential performance wins, ballparking future server traffic load, and quickly checking someone else's numbers. For me, it's be helpful in justifying how I spend my free cycles at Spring; it's a very quick way to determine the biggest bang for your buck!
