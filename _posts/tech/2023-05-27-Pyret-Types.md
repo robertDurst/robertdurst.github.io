@@ -5,11 +5,13 @@ date:   2023-05-27 12:00:00 +0700
 tech: true
 ---
 
-This summer I am beginning research around adding a new type to the [Pyret Programming Langauage](https://pyret.org/). While I have hacked on my own programming langauge ([Sailfish](https://github.com/sailfish-lang)) and even [contributed to a pretty legit rust WASM project, wasm-bindgen](https://github.com/rustwasm/wasm-bindgen/pulls?q=is%3Apr+author%3ArobertDurst+is%3Aclosed), I have yet to _really_ contribute to a programming language. 
+This summer I am beginning research with a primary goal of adding a new type to the [Pyret Programming Langauage](https://pyret.org/). While I have hacked on my own programming langauge ([Sailfish](https://github.com/sailfish-lang)), contributed to a [paper published as part of 2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)](https://software-lab.org/publications/icse2022_Nessie.pdf), and even [contributed to a rust WASM project, wasm-bindgen](https://github.com/rustwasm/wasm-bindgen/pulls?q=is%3Apr+author%3ArobertDurst+is%3Aclosed), I have yet to _really_ contribute to a programming language. 
 
-## The Typechecker
+Pyret is a dynamic language with an optional type checker. Thus, adding types don't, by default, alter the compilation or execution process of Pyret programs. However, we _do_ enable better tooling such as an improved language server (al beit [the only language server is a WIP](TODO: find link)) or even filling type holes in improved REPL editors like [Repartee](https://kilthub.cmu.edu/articles/conference_contribution/Combining_Interactive_and_Whole-Program_Editing_with_REPARTEE/19787683?backTo=/collections/PLATEAU_2022/5957631).
 
-### Getting Started
+So, where do we begin? As pointed out by my faculty advisor (** TODO: ask if I can name him/her here **), a good starting point is to check out the typechecker to investigate the logic around enforcing types.
+
+## Getting Started
 
 The easiest way to see the type-checker in action:
 
@@ -39,10 +41,7 @@ end
 9. click `Type-check and run (beta)` and observe the type check error
 ![`Type-check and run (beta)` button](../../assets/images/type_check_REPL_failure.png)
 
-### Down the Rabbit Hole
-
-
-#### The Type-checker
+## The Typechecker
 
 [Typechecker code block from the runtime starts here](https://github.com/brownplt/pyret-lang/blob/horizon/src/js/base/runtime.js#L1307).
 [tyopeMisMatch error is defined in the ffi file here](https://github.com/brownplt/pyret-lang/blob/horizon/src/js/trove/ffi.js#L286).
@@ -124,11 +123,14 @@ function(val) {
 }
 ```
 
-#### Types checked
+## Pyret's Type System
+
+
+### Types checked
 
 Since `makeCheckType` is a method generator for the `checkType` method, we can then look for the instances where `makeCheckType` is called to figure out the scope of type checking in Pyret.
 
-##### Some Context - Brands
+### Some Context - Brands
 
 > Brands are a mostly internal language concept, useful for implementing custom datatypes.
 
@@ -152,7 +154,7 @@ function hasBrand(brand, val) {
 ```
 
 
-##### Comprehensive list of Types
+### Comprehensive list of Types
 
 | Type Name         | Type Check                                                    | Where Defined                  | Notes                                |
 | ----------------- | ------------------------------------------------------------- | ------------------------------ | ------------------------------------ |
@@ -196,7 +198,7 @@ function hasBrand(brand, val) {
 | MutableStringDict |                                                               | src/js/trove/string-dict.js    | how is this different from str-dict? |
 | StringDict        |                                                               | src/js/trove/string-dict.js    | how is this different from str-dict? |
 
-#### How the type checker is used
+### How the type checker is used
 
 Let's start with an example of `checkBoolean`. It's definition is:
 
