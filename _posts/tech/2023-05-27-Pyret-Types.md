@@ -5,9 +5,101 @@ date:   2023-05-27 12:00:00 +0700
 tech: true
 ---
 
-This summer I am beginning research with a primary goal of adding a new type to the [Pyret Programming Langauage](https://pyret.org/). While I have hacked on my own programming langauge ([Sailfish](https://github.com/sailfish-lang)), contributed to a [paper published as part of 2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)](https://software-lab.org/publications/icse2022_Nessie.pdf), and even [contributed to a rust WASM project, wasm-bindgen](https://github.com/rustwasm/wasm-bindgen/pulls?q=is%3Apr+author%3ArobertDurst+is%3Aclosed), I have yet to _really_ contribute to a programming language. 
+This summer I am beginning research with a primary goal of adding a new type to the [Pyret Programming Langauage](https://pyret.org/). While I have hacked on my own programming langauge ([Sailfish](https://github.com/sailfish-lang)), contributed to a [paper published as part of 2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)](https://software-lab.org/publications/icse2022_Nessie.pdf), and even [put up PRs that were accepted for a rust WASM project, wasm-bindgen](https://github.com/rustwasm/wasm-bindgen/pulls?q=is%3Apr+author%3ArobertDurst+is%3Aclosed), I have yet to _really_ contribute to a programming language. 
 
-Pyret is a dynamic language with an optional type checker. Thus, adding types don't, by default, alter the compilation or execution process of Pyret programs. However, we _do_ enable better tooling such as an improved language server (al beit [the only language server is a WIP](TODO: find link)) or even filling type holes in improved REPL editors like [Repartee](https://kilthub.cmu.edu/articles/conference_contribution/Combining_Interactive_and_Whole-Program_Editing_with_REPARTEE/19787683?backTo=/collections/PLATEAU_2022/5957631).
+## What is Pyret?
+
+> Pyret is a programming language designed to serve as an outstanding choice for programming education while exploring the confluence of scripting and functional programming. It's under active design and development, and free to use or modify.
+-- [pyret.org](https://pyret.org/)
+
+Ultimately, Pyret is a dynamic language with annotations and an optional type checker. Thus, consider the following levels of type enforcement for a method that takes in a number and calculates the square.
+
+
+**Example 1: no annotations and type checker off**
+```
+fun square_num(n):
+  n * n
+end
+```
+
+**On execution with the wrong input type:**
+```
+> square_num("10")
+Evaluating this Times (*) expression errored:
+  n * n
+The left side was:
+
+"10"
+The right side was:
+
+"10"
+The * operator expects to be given two Numbers.
+```
+
+**Example 2: input annotations and type checker off**
+```
+fun square_num(n :: Number):
+  n * n
+end
+```
+
+**On execution with the wrong input type:**
+```
+> square_num("10")
+The Number annotation
+    fun square_num(n :: Number):
+was not satisfied by the value
+
+"10"
+```
+
+**Example 3: input annotations and type checker on**
+```
+fun square_num(n :: Number):
+  n * n
+end
+```
+
+**On execution with the wrong input type:**
+```
+> square_num("10")
+Type checking failed because of a type inconsistency.
+
+The type constraint Number was incompatible with the type constraint String
+```
+
+**Example 4: full function annotations and type checker on**
+```
+square_num :: Number -> Number
+fun square_num(n):
+  n * n
+end
+```
+
+**On execution with the wrong input type:**
+```
+> square_num("10")
+Type checking failed because of a type inconsistency.
+
+The type constraint Number was incompatible with the type constraint String
+```
+
+**Example 5: full function annotations and type checker on with incorrect function implementation**
+```
+square_num :: Number -> Number
+fun square_num(n):
+  n * n
+end
+```
+
+**On compilation:**
+```
+Type checking failed because of a type inconsistency.
+
+The type constraint Number was incompatible with the type constraint String
+```
+
+Since type checking is off by default, unless users typically add type annotations, adding new types don't, alter the compilation or execution process of Pyret programs. However, we _do_ enable better tooling such as an improved language server (al beit [the only language server is a WIP](TODO: find link)) or even filling type holes in improved REPL editors like [Repartee](https://kilthub.cmu.edu/articles/conference_contribution/Combining_Interactive_and_Whole-Program_Editing_with_REPARTEE/19787683?backTo=/collections/PLATEAU_2022/5957631).
 
 So, where do we begin? As pointed out by my faculty advisor (** TODO: ask if I can name him/her here **), a good starting point is to check out the typechecker to investigate the logic around enforcing types.
 
