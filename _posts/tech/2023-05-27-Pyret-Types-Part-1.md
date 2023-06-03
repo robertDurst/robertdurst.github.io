@@ -131,6 +131,10 @@ Type checking failed because of a type inconsistency.
 The type constraint Number was incompatible with the type constraint String
 ```
 
+***
+
+## Conclusion
+
 Since type checking is off by default, unless users add type annotations, new types won't, alter the compilation or execution process of existing Pyret programs. However, we _do_ enable better tooling such as an improved language server (al beit [the only language server is a WIP](TODO: find link)) or even filling type holes in improved REPL editors like [Repartee](https://kilthub.cmu.edu/articles/conference_contribution/Combining_Interactive_and_Whole-Program_Editing_with_REPARTEE/19787683?backTo=/collections/PLATEAU_2022/5957631).
 
 So, where do we begin? As pointed out by my [faculty advisor from the University of Utah Ben Greenman](https://ben-greenman.com/), a good starting point is to check out the typechecker to investigate the logic around enforcing types.
