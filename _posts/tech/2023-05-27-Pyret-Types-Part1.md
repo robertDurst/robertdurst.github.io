@@ -5,7 +5,7 @@ date:   2023-05-27 12:00:00 +0700
 tech: true
 ---
 
-This summer I am beginning research with a primary goal of adding a new type to the [Pyret Programming Langauage](https://pyret.org/). While I have hacked on my own programming langauge ([Sailfish](https://github.com/sailfish-lang)) and contributed to a [paper published as part of 2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)](https://software-lab.org/publications/icse2022_Nessie.pdf), I have yet to _really_ contribute to a programming language. 
+This summer I am beginning research with a primary goal of adding a new type to the [Pyret Programming Language](https://pyret.org/). While I have hacked on my own programming language ([Sailfish](https://github.com/sailfish-lang)) and contributed to a [paper published as part of 2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)](https://software-lab.org/publications/icse2022_Nessie.pdf), I have yet to _really_ contribute to a programming language. 
 
 ## What is Pyret?
 
