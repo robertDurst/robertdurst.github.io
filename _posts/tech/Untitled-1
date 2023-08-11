@@ -1,0 +1,77 @@
+## Leveraging Keyof to Type Tables
+
+From [Types for Tables: A Language Design Benchmark - 3.1](https://cs.brown.edu/~sk/Publications/Papers/Published/lgk-b2t2/paper.pdf), we have the following definitions:
+
+* **table**: a schema and a rectangular collection of cells.
+* **schema**: an ordered, unique sequence of column names and corresponding sorts.
+* **header**: a sequence of distinct column names (a schema without sorts).
+* **column name**: is a string-like first-class datatype.
+* **sort**: describes the kind of data that a cell may contain.
+* **collection of cells**: has C ∗ R members, where: C is the length of the schema, R is an arbitrarily-large number of rows, and each cell has a unique index (c,r) for 0 ≤ c < C and 0 ≤ r < R. The rectangular arrangement has four important consequences: the rows are ordered, the columns are indexable by schema, all columns contain exactly R cells, and all rows contain exactly C cells.
+* **row**: is an ordered sequence of cells.
+* **cell**: is a container for data. It may be empty and the data in cells of column c must match the sort of the c-th element of the
+schema.
+
+So what is a table type? Based on the above, it is a an ordered sequence of labeled types. Thus, we're most interested in leveraging saftey things based on the schema.
+
+Stepping back, what do we care about for tables:
+
+* type compatability
+    * equivalence: is this table T1 the same as this other table T2?
+    * subtype: for some table T1 and another T2, are all tables T1 tables T2? (the reverse need not be true)
+* static, schema based validations for:
+    * CRUD'ing rows
+    * CRUD'ing columns
+
+Nominally, it would look a bit like this:
+
+* get-headers: `Table -> [] string`
+* compare tables:
+    * is-subtype: `Table -> Table -> Bool`
+    * is-instance-of: `Table -> Table -> Bool`
+* CRUD columns:
+    * get-column: `Table -> Column Name -> Column`
+    * add-column: `Table -> Column -> Table`
+    * delete-column: `Table -> Column Name -> Table`
+* CRUD rows:
+    * get-row: `Table -> Number -> Row`
+    * add-row: `Table -> Row -> Table`
+    * delete-row: `Table -> Number -> Table`
+
+Today's Pyret supports this via branding.
+
+Structurally, it would look a bit like this:
+
+```pyret
+EmptyTable: { }
+
+SORT = string | number | etc.
+Schema: Record<ColumnName, SORT>
+
+ColumnName = SingletonString
+TOP = top
+
+Column = [ColumnName; TOP]
+
+! :: Not in?
+```
+
+* get-headers<T1>: `keyof T1`
+* compare tables:
+    * is-subtype:
+    * is-instance-of:
+* CRUD columns:
+    <!-- get-column :: some Table -> some column name from table -> the column for that column name -->
+    * get-column<T1>: `Schema -> keyof Schema -> SORT`
+    <!-- add-column :: some Table -> some tuple with a column name not in the table and an acceptable sort -> the table with this new column -->
+    * add-column<T1>: `Schema -> [keyof Schema; SORT] -> Schema & [keyof Schema; SORT]`
+    <!-- delete-column :: some Table -> some column name from table -> the table without that column -->
+    * delete-column<T1>: `Schema -> keyof Schema -> Schema & Omit<keyof Schema, SORT>`
+* CRUD rows:
+    * get-row:
+    * add-row: 
+    * delete-row:
+
+<!-- A schema's header is basically its `keyof`. From this we can: -->
+
+***
