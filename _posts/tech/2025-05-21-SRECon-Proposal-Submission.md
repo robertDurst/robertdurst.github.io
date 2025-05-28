@@ -5,7 +5,7 @@ date: 2025-05-21
 tech: true
 ---
 
-## I am not an SRE
+## I Am Now An SRE
 
 After starting the team and helping lead the development of Spring Health’s in-house provider availability system (a story that deserves its own post), I officially transitioned into an SRE role in mid-2024. My mission: to make Observability Driven Development the default. It’s an ambitious culture shift and one that leans more on the socio than the technical. That makes it a challenge, but also a rich learning opportunity (all problems are people problems at the end of the day, right???).
 
