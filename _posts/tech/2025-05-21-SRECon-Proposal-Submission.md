@@ -13,29 +13,6 @@ As part of this move, I’ve been leading our internal effort to adopt SLOs. Thi
 
 Today I officially submitted my talk proposal! While I very well might not be accepted, it's the first step in the journey towards becoming a speaker and really a participant in not just SRE at Spring, but the entire SRE community. Excited!
 
-## Submitted Abstract for 
-
-Below is my abstract. If I am accepted, will upload my full talk here!
-
-***
-
-**Title**: Run, Walk, Crawl, or How We Failed Our Way to SLO Readiness
-
-Scaling an SRE team in a hypergrowth, resource-constrained, product focused startup is a uniquely challenging endeavor. When velocity is paramount and observability is minimal, it's easy to fall into a “no bug tickets, no complaints, no reliability issues” mindset. At our company, success almost became our demise. Each January, contract go-lives and benefit turnover drove massive, anomalous traffic spikes, setting new baselines for the year. January 2022 was the tipping point. That year, traffic surged well beyond system limits. Only through an all-hands-on-deck effort, led by the newly formed platform team, did we narrowly avoid disaster.
-
-Since then, we’ve experienced multiple similar near-misses. Each time, we came to the same realization: proactive reliability work, while conceptually valuable, doesn’t succeed without foundational maturity. For example, most of us would agree that paging on alerts is a powerful way to run production systems responsibly. But we can’t just declare perfect, no-false-positive alerting into existence. Without prerequisites like baseline observability, clear ownership, and dedicated attention, a paging culture becomes just another well-intentioned idea that quickly loses momentum.
-
-In this talk, we’ll walk through a specific case study of this phenomena at our company: SLO unreadiness, or, how we failed three separate times to get SLOs off the ground, despite increased maturity and motivation at each step. Each failed attempt surfaced another missing foundation, from lack of insight into nominal system behavior to unclear ownership and lack of time for follow-through. On our fourth attempt, with key maturity markers in place, we finally gained traction.
-
-We’ll use this case study to propose a simple framework: four checkpoints we now see as essential signals of readiness for any serious reliability initiative:
-
-1. *basic observability*: the ability to see and measure what matters
-2. *an understanding of nominal*: knowing what “normal” looks like in your systems.
-3. *a concept of ownership*: accountability via defined service and team boundaries
-4. *protected time*: a dedicated resource who can focus long enough to make it stick
-
-This framework, while developed in the context of SLOs, has echoed across other reliability efforts, from development of a homegrown autoscaler, to a standardized incident response process. We believe it generalizes. Our goal is to help others avoid the churn and missed opportunities we faced by recognizing these hidden prerequisites early, especially in fast-moving, under-resourced environments.
-
-***
-
 While `Hope is Not a Strategy` may be _the_ SLO saying, hopefully I follow up soon with good news... wish me luck!
+
+**Will post the details of the submission here later following the review period.**
