@@ -94,7 +94,7 @@ Thus far, Digicus (and many of the earlier VPL attempts in this space) have been
 
 **Architecture:**
 
-<center><img src="../images/revamped_architecture_doc.png" alt="current architecture diagram"/></center>
+<center><img src="../../images/revamped_architecture_doc.png" alt="current architecture diagram"/></center>
 
 Our compiler plugin framework is leveraged by Digit via the Bean Stock Compiler Plugin (pod) Hub [^14]. Bean Stock sources pods via `git submodules`, where each submodule has a `bean_stock_manifest.yaml` file describing the pod. Here is an example:
 
@@ -115,7 +115,7 @@ The Digit server's Dockerfile can then fetch and compile/setup each submodule up
 Below is an initial mockup of the MVP user interface.
 
 <div style="text-align:center">
-  <img src="../images/digicus-ide-mockup.png" alt="Digit Overview"> 
+  <img src="../../images/digicus-ide-mockup.png" alt="Digit Overview"> 
 </div>
 
 When developing with Digicus, users will be able to name the contract, drag and drop block components into the interactive function creator, and then they will be able to perform minimal, chain agnostic testing of the contract. The UI/UX for this will be based heavily off of the well-tested, mature Scratch programming platform. Furthermore, a plethora of features will be supported to make this a first class smart contract development interface, including but not limited to:
@@ -151,7 +151,7 @@ We're biased, we love Stellar and given the novelty of their solution to global 
 However, given the flexibility of the compiler plugin designed, one day, Digit will be able to support the following:
 
 <div style="text-align:center">
-  <img src="../images/digit_overview.png" alt="Digit Overview"> 
+  <img src="../../images/digit_overview.png" alt="Digit Overview"> 
 </div>
 
 Digit enables the seamless translation of contracts not only from source to DTR, but from source A to Target B. There are numerous ecosystem examples of targeted transpilation libraries [^16] and even blockchain interoperability[^17]. Digicus aims to go one step further, the generalization of smart contracts as whole. *We believe this is layer 3 at its finest!*
@@ -445,16 +445,12 @@ We believe Digicus will revolutionize the way budding smart contract newcomers o
 Presented visually, we believe the evolution of Digicus will look like this:
 
 <div style="text-align:center">
-  <img src="../images/stairway_to_success.png" alt="Digicus Stairway to Success"> 
+  <img src="../../images/stairway_to_success.png" alt="Digicus Stairway to Success"> 
 </div>
 
 As time goes on, we will work with developers to solicit feedback and conduct surveys in order to ensure we have the greatest possible positive impact on this community. These survey results will be posted on [our website](https://spaced-out-thoughts-dev-foundation.github.io/).
 
 Until then, please feel free to follow [our coding journey here](https://github.com/spaced-out-thoughts-dev-foundation) and experiment with [the IDE here](https://ide.digicus.dev/).
-
-#### <strong><u>Latest Status</u></strong>
-
-At time of writing (_August 2024_) we have accomplished our SCF #26 Activation Award deliverables ([demo'd here](https://www.youtube.com/watch?v=NhFTr5Cj4lU)) and just recently [pitched during the SCF #29 Community Award demos](https://youtu.be/z4zRXWfrTxc?si=6MkSZJOf7qaN5hUe&t=2696); we at Spaced Out Thoughts are huge fans and supporters of Stellar and thus seek to leverage our past experience with SDF to work within the ecosystem we know best.
 
 ***
 
