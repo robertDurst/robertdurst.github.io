@@ -489,3 +489,19 @@ input:checked + .slider:before {
   border-color: white;
   border-width: thick;
 }
+
+// Comments section styling
+.comments {
+  margin-top: 3rem;
+  
+  h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: #313131;
+  }
+  
+  // Utterances theme integration
+  .utterances {
+    max-width: 100%;
+  }
+}
