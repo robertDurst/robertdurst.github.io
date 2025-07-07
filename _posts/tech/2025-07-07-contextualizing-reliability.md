@@ -34,14 +34,14 @@ Consider a typical web service. This service has users and we'll make the follow
 ### The Interplay of Intent and Ability
 
 As it stands, we have the ideal, 100%, and then reality, the combination of those with intent and the ability to use the site: `100%` of those aware and with access
-can use the site, `X%` of those have the intent to use the site, and `Y%` of those with intent and are able.
+can use the site, `X%` of those have the intent to use the site, and `Y%` of those are able to use the site.
 
 Mathematically this looks like this:
 
 ```
 ACCESS: 100%
-INTENT: ACCESS - THOSE_WITHOUT_INTENT = X%
-ACCESS: X% - THOSE_WITHOUT_ACCESS = Y%
+INTENT:   X% = ACCESS - THOSE_WITHOUT_INTENT
+ABLE:     Y% = X% - THOSE_WITHOUT_ACCESS
 ```
 
 Visually:
@@ -66,18 +66,22 @@ At the end of the day, we live in a capitalist society. _Most_ web services prov
 
 ![tam, sam, som visual](assets/images/tam_sam_business.png)
 
-However, converting 100% of users with access to 100% with access and intent is a challenging (and maybe impossible?) endeavor. 
+[Image source.](https://blog.hubspot.com/marketing/tam-sam-som)
+
+However, converting 100% of users with access to 100% with access and intent is a challenging (and maybe impossible?) endeavor. It would involve turning the following triangle into a square? 🤔
 
 ![user funnel](assets/images/user_funnel.png)
 
-It would involve turning this triangle into a square? 🤔 As a site reliability engineer, designing an effective user funnel is outside my wheelhouse. 
+[Image source.](https://www.resultics.com/optimizing-performance-digital-funnel-google-analytics/)
+
+As a site reliability engineer, designing an effective user funnel is outside my wheelhouse. 
 
 However, I do believe the following.
 
-> if we've invested the time and money to achieve a decent conversion rate, we are, up to a certain point, wasting resources if we leave any users with intent unable to access our site.
+> If we've invested the time and money to achieve a decent conversion rate, we are, up to a certain point, wasting resources if we leave any users with intent unable to access our site.
 
 No site is perfectly reliable. In fact you don't want it to be ([each extra nine of reliability is exponentially expensive](https://thenewstack.io/the-hidden-costs-of-chasing-five-nines-in-availability/)). However, there is a threshold of level of service that your users expect, which, if not met, results in missed business. Defining that threshold ([service level objective](https://en.wikipedia.org/wiki/Service-level_objective)) based on a decent proxy of the user experience ([service level indicator](https://en.wikipedia.org/wiki/Service_level_indicator)) is not easy ([heck... there is a whole book about this stuff](https://www.oreilly.com/library/view/implementing-service-level/9781492076803/)). However, as hard as it is, [service reliability engineering](https://sre.google/sre-book/table-of-contents/) is a _science_. There are principles, best practices, patterns, and existing precedents (across industry domains, [medicine](https://relyence.com/2024/08/19/what-is-reliability-engineering/), [bridges](https://www.fhwa.dot.gov/bridge/pubs/hif19093.pdf), [airplanes](https://sassofia.com/blog/the-role-of-reliability-engineering-in-aviation-maintenance-systems/)) we can follow.
 
 ### Conclusion
 
-Based on the above, any discrepancy between the level of user intent and the level of user ability is, in my opinion, **money on the table**. So, circling back to our original point of investigation, reliability is _the most important feature_: without it, the rest of your organization’s work loses its effectiveness and momentum.
+Based on the above, any discrepancy between the level of user intent and the level of user ability is, in my opinion, **money on the table**. So, circling back to our original point of investigation, reliability is _the most important feature_: without it, the rest of your organization’s work loses its effectiveness and momentum and in the worst case, is _completely wasted_.
