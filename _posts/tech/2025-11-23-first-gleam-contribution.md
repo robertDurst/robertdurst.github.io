@@ -5,7 +5,7 @@ date: 2025-11-23
 tech: true
 ---
 
-By no means am I a newcomer to the world of open source:
+By no means am I a newcomer to the world of open source ([first contribution was January 4, 2018](https://robdurst.com/First-Open-Source-Contribution)):
 * I have contributed to numerous repos across the [Stellar](https://stellar.org/foundation) ecosphere including [`stellar-core`](https://github.com/stellar/stellar-core/graphs/contributors)
 * I implemented the `prompt io` method for [pyret lang](https://pyret.org/) - ([PR](https://github.com/brownplt/pyret-lang/pull/1688))
 * some friends and I launched an ice cream store on the Bitcoin Lightning Network - first of its kind ([link](https://github.com/BlockAndJerrys/block-and-jerrys))
