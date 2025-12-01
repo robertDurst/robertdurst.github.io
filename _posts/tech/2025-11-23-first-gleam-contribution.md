@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "My First Gleam Contribution ⭐️"
+title:  "My First Gleam Community Contribution ⭐️"
 date: 2025-11-23
 tech: true
 ---
