@@ -21,7 +21,7 @@ My setup.
 - **Primary model:** `anthropic/claude-opus-4-6` (_edit recently downgraded_)
 - **Fallback model:** `openai/gpt-5.2` (_edit recently downgraded_)
 - **Web search:** Brave Search API
-- **Task management:** Trello via a custom OpenClaw skill
+- **Task management:** Trello
 - **Messaging:** Telegram bot (locked to a single allowed user ID)
 - **Orchestration:** Docker Compose, running as a single gateway container
 
@@ -56,7 +56,7 @@ Still much to do to figure this out. The two dimensions of (a) rate limits and (
 
 ### Lesson #3: Hardening
 
-This one matters more than I initially thought. There's been a [lot of security scrutiny](https://fortune.com/2026/02/12/openclaw-ai-agents-security-risks-beware/) around OpenClaw recently: exposed instances leaking API keys, malicious skills on ClawHub, etc. Beyond the basics (fresh/wiped machine, limit access to credentials, don't expose to the public internet), I set my Claude Code agents on hardening the Docker setup: `cap_drop: ALL`, `read_only: true`, `no-new-privileges`, `non-root user`, `gateway bound to 127.0.0.1 only`.
+There's been a [lot of security scrutiny](https://fortune.com/2026/02/12/openclaw-ai-agents-security-risks-beware/) around OpenClaw recently: exposed instances leaking API keys, malicious skills on ClawHub, etc. Beyond the basics (fresh/wiped machine, limit access to credentials, don't expose to the public internet), I set my Claude Code agents on hardening the Docker setup: `cap_drop: ALL`, `read_only: true`, `no-new-privileges`, `non-root user`, `gateway bound to 127.0.0.1 only`.
 
 Not a security expert, but _yet-another-reminder_ to take this stuff seriously is never a bad thing.
 
